@@ -1,0 +1,3 @@
+function tianmao(){
+    return true;
+}
