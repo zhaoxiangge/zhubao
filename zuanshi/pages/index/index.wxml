@@ -1,13 +1,72 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class="index-container">
+  <view  class="cnt">
+    <input type='text' placeholder='根据关键词搜索' name="search" class="search" bindfocus='select'/>
+    <view class="cnt2">
+      <image src="{{src}}" lazy-load mode="aspectFill" class="cnt1"></image>
+      <text>珠宝顾问</text>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <!--轮播-->
+  <swiper class="slider" autoplay>
+    <swiper-item wx:for="{{list}}" wx:key="index">
+      <image src="http://192.168.42.167:3000/{{item.img}}" lazy-load mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+  <!--四宫格--> 
+  <view class='index-nav'>
+    <view wx:for="{{navlist}}" wx:key="index" class="nav-item">
+      <image src="http://192.168.42.167:3000/{{item.img}}" lazy-load mode="aspectFill" data-id='{{item.fid}}' data-name="{{item.fname}}" bindtap='handleJump'></image>
+      <text>{{item.fname}}</text>
+    </view>
+  </view>
+  <!--分割线-->
+  <view class="index-line">
+    <view class="index-line1"></view>
+    <view class="index-line2"></view>
+  </view>
+  <view class="divider1">
+      <text>系列产品{{a}}</text> 
+  </view>
+  <view class="index-nav1">
+    <view class="nav1-item" wx:for="{{nav1list}}" wx:key="index">
+      <image src="http://192.168.42.167:3000/{{item.img}}" lazy-load></image>
+    </view>
+  </view>
+  <!--分割线-->
+  <view class="index-line">
+    <view class="index-line1"></view>
+    <view class="index-line2"></view>
+  </view>
+  <view class="index-nav2">
+    <view>珠宝臻品鉴赏</view>
+    <view>一秒变钻石专家</view>
+  </view>
+  <view class="divider2">
+    <text>热卖单品</text> 
+  </view>
+  <!--热卖单品-->
+  <view class='index-nav3'>
+    <view wx:for="{{nav3list}}" wx:key="index" class="nav3-item">
+      <image src="http://192.168.42.167:3000/{{item.pic1}}" lazy-load mode="aspectFill" data-id='{{item.pid}}' bindtap='ring'></image>
+      <view class="name">{{item.title}}</view>
+      <view class="name">
+        <text class="price">￥{{item.price}}</text><text class="stock">{{item.sold}}件已售</text>
+      </view>
+    </view>
+  </view>
+  <view class="divider5">
+      <view class="item1" bindtap='indexBtn'>
+      <image src="../static/home.png" lazy-load mode="aspectFill"></image>
+     <text>主页</text>
+      </view> 
+      <view class="item1" bindtap='shopCard'>
+      <image src="../static/cart.jpg" lazy-load mode="aspectFill"></image>
+     <text>购物车</text>
+      </view> 
+      <view class="item1" bindtap='profile'>
+      <image src="../static/profile.png" lazy-load mode="aspectFill"></image>
+     <text>客服</text>
+      </view> 
   </view>
 </view>
