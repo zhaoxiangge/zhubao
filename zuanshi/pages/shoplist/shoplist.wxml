@@ -1,0 +1,22 @@
+<!--pages/shoplist/shoplist.wxml-->
+<view class="shop-container">
+  <view class="header">
+    <image wx:if="{{list.img}}" src="http://192.168.42.167:3000/{{list.img}}"></image>
+  </view>
+  <view class="divider">
+      <view bindtap='handleJump'>默认</view> 
+      <view bindtap='price'>价格
+        <image lazy-load mode="aspectFit" src="{{istop?'http://192.168.42.167:3000/img/png/icon_arrow.jpg' :'http://192.168.42.167:3000/img/png/icon_top.jpg'}}"></image>
+      </view>
+      <view>筛选</view>
+  </view>
+  <view class='index-nav3'>
+    <view wx:for="{{nav3list}}" wx:key="index" class="nav3-item">
+      <image src="http://192.168.42.167:3000/{{item.pic1}}" lazy-load mode="aspectFill" bindtap='ring' data-id="{{item.pid}}"></image>
+      <view class="name">{{item.title}}</view>
+      <view class="name">
+        <text class="price">￥{{item.price}}</text><text class="stock">{{item.sold}}件已售</text>
+      </view>
+    </view>
+  </view>
+</view>
