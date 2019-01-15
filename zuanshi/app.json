@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/shoplist/shoplist"
+    "pages/shoplist/shoplist",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
