@@ -1,0 +1,128 @@
+/* pages/detail/detail.wxss */
+.slider,.slider image,.slider swiper{
+  width:100%;
+  height:550rpx;
+}
+.name{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+.price1{
+  margin: 15px;
+  font-size: 24rpx;
+  color:rgb(236, 14, 51);
+}
+.material{
+  width: 600rpx;
+  height: 28px;
+  margin: 15px auto;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #000;
+  line-height: 28px;
+  
+}
+.divider{
+  height: 80rpx;
+  background: #fff;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 33rpx;
+  border-bottom: 1rpx solid #ccc;
+    color: #000;
+}
+.divider view{
+  width: 33.333%;
+  text-align: center;
+  font-size: 13px;
+}
+.divider2{
+  height: 55rpx;
+  background: #eee;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 33rpx;
+}
+.active{
+  height:80rpx;
+  border-bottom: 1px solid #f00; 
+  color: #f00;
+  font-size: 13px;
+  line-height: 80rpx;
+}
+.divider3{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  padding-bottom:80rpx; 
+}
+.divider3 view{
+
+  width: 100%;
+  text-align: center;
+}
+.divider3 image{
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+.divider1{
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  background: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.divider1 text{
+  margin: 0 10px;
+}
+.divider4{
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  background: #eee;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.divider4 text{
+  margin: 0 10px;
+}
+.divider5{
+  position: fixed;
+  bottom: 0px;
+  height: 80rpx;
+  background: #fff;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 33rpx;
+  color: #000;
+  width: 100%;
+}
+.item1{
+  width: 16%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18rpx;
+}
+.item1 image{
+  width: 20px;
+  height: 20px;
+}
+.item2{
+  width: 52%;
+  text-align: center;
+  height: 80rpx;
+  background:rgba(231, 8, 19, 0.555);
+  line-height: 80rpx;
+}

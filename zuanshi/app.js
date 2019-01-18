@@ -23,7 +23,11 @@ App({
               data: { openid: res.data.openid },
               success: (res) => {
                 //console.log(res)
-                that.globalData.uid = res.data.data[0].uid
+                if (res.data.data[0]) {
+                  that.globalData.uid = res.data.data[0].uid
+                } else {
+                  that.globalData.uid = 0;
+                }
               }
             });
           }

@@ -1,0 +1,62 @@
+<!--pages/detail/detail.wxml-->
+
+<view class="detail-container">
+  <swiper class="slider" autoplay>
+    <swiper-item wx:for="{{list}}" wx:key="index">
+      <image wx:if="{{item.lg.length>0}}" src="http://192.168.42.167:3000/{{item.lg}}" lazy-load mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+  <view class="name">
+    <view class="name">{{list1.title}}</view>
+    <view class="price1">￥{{list1.price}}</view>
+  </view>
+  <view class="material">{{list1.product}}</view>
+  <view class="divider2"></view>
+  <view class="divider">
+      <view bindtap='handleJump' class="{{select==0?'active':''}}" bindtap='changeArea' data-area='0'>图文详情</view> 
+      <view bindtap='price' class="{{select==1?'active':''}}" bindtap='changeArea' data-area='1'>商品参数</view>
+      <view class="{{select==2?'active':''}}" bindtap='changeArea' data-area='2'>商品评价</view>
+  </view>
+  <view class="divider3" wx:if="{{0==select}}">
+    <view wx:for="{{list2}}" wx:key="index">
+      <image wx:if="{{item.img.length>0}}" src="http://192.168.42.167:3000/{{item.img}}"></image>
+    </view> 
+  </view>
+  <view wx:if="{{1==select}}">
+    <view class="divider1">
+        <text>品名</text> 
+        <text>{{list1.product}}</text> 
+    </view>
+    <view class="divider4">
+      <text>钻石</text> 
+      <text>主钻{{list1.main_weight}}克" "副钻{{list1.vice_weight}}克</text> 
+    </view>
+    <view class="divider1">
+        <text>材质</text> 
+        <text>{{list1.material}}</text> 
+    </view>
+    <view class="divider4">
+      <text>手寸</text> 
+      <text>{{list1.hand_size}}</text> 
+    </view>
+  </view>
+  <view>
+    <view></view>
+    <view></view>
+  </view>
+  <view class="divider5">
+      <view class="item1" bindtap='indexBtn'>
+      <image src="../static/home.png" lazy-load mode="aspectFill"></image>
+     <text>主页</text>
+      </view> 
+      <view class="item1">
+      <image src="../static/message.png" lazy-load mode="aspectFill"></image>
+     <text>客服</text>
+      </view> 
+      <view class="item1" bindtap='shopCard'>
+      <image src="../static/f_ihome5.png" lazy-load mode="aspectFill"></image>
+     <text>购物车</text>
+      </view> 
+      <view class="item2" bindtap='addCard'>加入购物车</view>
+  </view>
+</view>

@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/shoplist/shoplist",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/shopCart/shopCart",
+    "pages/detail/detail",
+    "pages/select/select"
   ],
   "window": {
     "backgroundTextStyle": "light",

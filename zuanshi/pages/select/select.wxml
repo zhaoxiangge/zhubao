@@ -1,0 +1,37 @@
+<!--pages/select/select.wxml-->
+<view class="index-container">
+  <view  class="cnt">
+    <input type='text' placeholder='根据关键词搜索' name="search" class="search" bindinput='search' bindfocus='search2' value="{{inputValue}}"/>
+    <view class="cnt2">
+      <image src="{{src}}" lazy-load mode="aspectFill" class="cnt1" bindtap='search1'></image>
+      <text>珠宝顾问</text>
+    </view>
+  </view>
+  <view wx:if="{{isShow}}">
+    <view class="title">热门搜索</view>
+    <view class="divder1">
+      <view class="divder2" wx:for="{{list}}" wx:key="index"><text data-id="{{index}}" bindtap='handleJump'>{{item.name}}</text></view>
+    </view>
+    <view wx:if="{{StorageFlag}}">
+      <view class="title"><text>历史搜索</text><text bindtap='clearSearchStorage'>清除</text> </view>
+      <view class="divder1">
+        <view class="divder2" wx:for="{{sercherStorage}}" wx:key="index"><text data-lid="{{index}}" bindtap='handleJump1'>{{item.value}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view wx:for="{{list1}}" wx:key="index" class='shop' wx:if="{{list1.length>0}}">
+    <image class='shop-img' src="http://192.168.42.167:3000/{{item.pic1}}" lazy-load mode="aspectFill" data-id='{{item.pid}}' bindtap='ring'></image>
+    <view class="shop-info">
+      <text class="shop-title ell">{{item.title}}</text>
+      <view>
+        <text class="shop-bottom">销量{{item.sold}}</text>
+        <text class="shop-bottom">评价{{item.Comments}}</text>
+      </view>
+    </view>
+    <view class="price"><text>￥{{item.price}}</text></view>
+  </view>
+  <view class="footer" wx:if="{{isShow1}}">
+    <icon size="100" type="search"></icon>
+    <text>抱歉！没有找到您要的商品！</text>
+  </view>
+</view>

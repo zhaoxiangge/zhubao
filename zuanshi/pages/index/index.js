@@ -137,7 +137,7 @@ Page({
             success: function (res) {
               //获取用户信息
               app.globalData.userInfo = res.userInfo
-              console.log(that.globalData.userInfo)
+              //console.log(app.globalData.userInfo)
             }
           });
         } else {

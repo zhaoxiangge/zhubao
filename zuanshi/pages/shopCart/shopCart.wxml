@@ -1,0 +1,24 @@
+<!--pages/shopCard/shopCart.wxml-->
+<view>
+  <view wx:for="{{list}}" wx:key="index">
+    <view class="shop {{list1[index]?'active':''}}">
+      <image src="http://192.168.42.167:3000/{{item.pic1}}" class="shop-img" data-id="{{index}}" bindtap='select'></image>
+      <view class="shop-info">
+        <text class="shop-title ell">{{item.title}}</text>
+      </view>
+      <view class='card-right'>
+        <text class="price">￥{{item.price}}</text>
+        <text class="del" bindtap='del' data-cid="{{item.cid}}">删除</text>
+      </view>
+    </view>
+  </view>
+  <view class="divider5">
+  <view class='item3' wx:if="{{!select}}" bindtap='selectAll'>全选</view>
+  <view class='item3 active' wx:if="{{select}}" bindtap='selectAll'>取消全选</view>
+    <view class="item1" bindtap='indexBtn'>
+     <text>本次应付：￥{{sum1}}</text>
+     <text>订单总额：￥{{sum}} 优惠金额：￥0</text>
+    </view> 
+    <view class="item2" bindtap='addCard'>结算</view>
+  </view>
+</view>
