@@ -6,7 +6,8 @@
     "pages/login/login",
     "pages/shopCart/shopCart",
     "pages/detail/detail",
-    "pages/select/select"
+    "pages/select/select",
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundTextStyle": "light",
